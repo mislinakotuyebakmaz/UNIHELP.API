@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UniHelp Bildirimleri</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        #notificationsList { list-style-type: none; padding: 0; }
+        #notificationsList li { background-color: #f0f0f0; margin-bottom: 10px; padding: 15px; border-left: 5px solid #007bff; }
+    </style>
+</head>
+<body>
+
+    <h1>Gerçek Zamanlı Bildirimler</h1>
+    <hr />
+
+    <div>
+        <label for="tokenInput">JWT Token:</label>
+        <input type="text" id="tokenInput" size="100" placeholder="Login olduktan sonra aldığınız token'ı buraya yapıştırın..." />
+        <button id="connectButton">Bağlan</button>
+        <button id="disconnectButton" disabled>Bağlantıyı Kes</button>
+    </div>
+    <hr />
+
+    <h3>Gelen Bildirimler:</h3>
+    <ul id="notificationsList"></ul>
+
+    <!-- SignalR JavaScript kütüphanesini ekliyoruz -->
+    <script src="/lib/signalr.min.js"></script>
+    <script>
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/notificationHub", {
+                accessTokenFactory: () => document.getElementById("tokenInput").value
+            })
+            .configureLogging(signalR.LogLevel.Information)
+            .build();
+
+        const connectBtn = document.getElementById("connectButton");
+        const disconnectBtn = document.getElementById("disconnectButton");
+        const notificationsList = document.getElementById("notificationsList");
+        
+        connectBtn.addEventListener("click", function (event) {
+            const token = document.getElementById("tokenInput").value;
+            if (!token) {
+                alert("Lütfen bir JWT token girin!");
+                return;
+            }
+
+            console.log("Bağlantı kuruluyor...");
+            connection.start().then(function () {
+                console.log("Bağlantı başarılı! ConnectionId:", connection.connectionId);
+                
+                // === YENİ EKLENEN LOGLAMA KODU ===
+                // Token'ı çözüp içindeki kullanıcı bilgilerini konsola yazdırıyoruz.
+                try {
+                    const payload = JSON.parse(atob(token.split('.')[1]));
+                    console.log("BAĞLANAN KULLANICI -> Adı:", payload.unique_name, " | ID:", payload.nameid);
+                } catch (e) {
+                    console.error("Token çözümlenirken hata oluştu:", e);
+                }
+                // ===================================
+
+                connectBtn.disabled = true;
+                disconnectBtn.disabled = false;
+            }).catch(function (err) {
+                // === HATAYI DAHA DETAYLI LOGLA ===
+                console.error("### BAĞLANTI HATASI ###:", err);
+                // ================================
+            });
+            event.preventDefault();
+        });
+
+        disconnectBtn.addEventListener("click", function (event) {
+            connection.stop().then(function () {
+                console.log("Bağlantı kesildi.");
+                connectBtn.disabled = false;
+                disconnectBtn.disabled = true;
+            }).catch(function (err) {
+                return console.error(err.toString());
+            });
+            event.preventDefault();
+        });
+
+        connection.on("ReceiveNotification", function (message) {
+            console.log("!!! BİLDİRİM ALINDI !!!:", message);
+            const li = document.createElement("li");
+            li.textContent = message;
+            notificationsList.insertBefore(li, notificationsList.firstChild);
+        });
+
+    </script>
+</body>
+</html>

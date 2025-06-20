@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "Hash": "ofQS2OZeHNH3YFJN5tanhgnJmmo8eS3BUefcu1EjIIg=",
+  "Source": "UniHelp.Api",
+  "BasePath": "_content/UniHelp.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "UniHelp.Api/wwwroot",
+      "Source": "UniHelp.Api",
+      "ContentRoot": "/Users/mislinakotuyebakmaz/UniHelp.Api/wwwroot/",
+      "BasePath": "_content/UniHelp.Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/mislinakotuyebakmaz/UniHelp.Api/wwwroot/index.html",
+      "SourceId": "UniHelp.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mislinakotuyebakmaz/UniHelp.Api/wwwroot/",
+      "BasePath": "_content/UniHelp.Api",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
+    },
+    {
+      "Identity": "/Users/mislinakotuyebakmaz/UniHelp.Api/wwwroot/lib/signalr.min.js",
+      "SourceId": "UniHelp.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mislinakotuyebakmaz/UniHelp.Api/wwwroot/",
+      "BasePath": "_content/UniHelp.Api",
+      "RelativePath": "lib/signalr.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/lib/signalr.min.js"
+    }
+  ]
+}
