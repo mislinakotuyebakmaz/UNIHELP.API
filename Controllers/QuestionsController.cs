@@ -10,7 +10,7 @@ namespace UniHelp.Api.Controllers;
 
 [Authorize]
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/v1/[controller]")]
 public class QuestionsController : ControllerBase
 {
     private readonly DataContext _context;

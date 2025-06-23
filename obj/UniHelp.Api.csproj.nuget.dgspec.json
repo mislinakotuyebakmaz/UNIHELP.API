@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mislinakotuyebakmaz/UniHelp.Api/UniHelp.Api.csproj": {}
+    "/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/UniHelp.Api.csproj": {}
   },
   "projects": {
-    "/Users/mislinakotuyebakmaz/UniHelp.Api/UniHelp.Api.csproj": {
+    "/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/UniHelp.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mislinakotuyebakmaz/UniHelp.Api/UniHelp.Api.csproj",
+        "projectUniqueName": "/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/UniHelp.Api.csproj",
         "projectName": "UniHelp.Api",
-        "projectPath": "/Users/mislinakotuyebakmaz/UniHelp.Api/UniHelp.Api.csproj",
+        "projectPath": "/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/UniHelp.Api.csproj",
         "packagesPath": "/Users/mislinakotuyebakmaz/.nuget/packages/",
-        "outputPath": "/Users/mislinakotuyebakmaz/UniHelp.Api/obj/",
+        "outputPath": "/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mislinakotuyebakmaz/.nuget/NuGet/NuGet.Config"
@@ -45,39 +45,27 @@
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Common": {
+              "target": "Package",
+              "version": "[8.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.4, )"
-            },
-            "Microsoft.EntityFrameworkCore.Proxies": {
-              "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.6, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[8.0.1, )"
-            },
-            "Serilog.Sinks.Console": {
-              "target": "Package",
-              "version": "[5.0.1, )"
-            },
-            "Serilog.Sinks.File": {
-              "target": "Package",
-              "version": "[5.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

@@ -12,7 +12,7 @@ namespace UniHelp.Api.Controllers;
 
 [Authorize]
 [ApiController]
-[Route("api/questions/{questionId}/[controller]")]
+[Route("api/v1/questions/{questionId}/[controller]")]
 public class AnswersController : ControllerBase
 {
     private readonly DataContext _context;

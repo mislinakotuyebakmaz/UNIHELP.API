@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ofQS2OZeHNH3YFJN5tanhgnJmmo8eS3BUefcu1EjIIg=",
+  "Hash": "Uo2LuJ8Tp7pZNO6Zg0yyvfkBri63UnYhQu760Lwyj1Q=",
   "Source": "UniHelp.Api",
   "BasePath": "_content/UniHelp.Api",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "UniHelp.Api/wwwroot",
       "Source": "UniHelp.Api",
-      "ContentRoot": "/Users/mislinakotuyebakmaz/UniHelp.Api/wwwroot/",
+      "ContentRoot": "/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/wwwroot/",
       "BasePath": "_content/UniHelp.Api",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/mislinakotuyebakmaz/UniHelp.Api/wwwroot/index.html",
+      "Identity": "/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/wwwroot/index.html",
       "SourceId": "UniHelp.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/mislinakotuyebakmaz/UniHelp.Api/wwwroot/",
+      "ContentRoot": "/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/wwwroot/",
       "BasePath": "_content/UniHelp.Api",
       "RelativePath": "index.html",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot/index.html"
     },
     {
-      "Identity": "/Users/mislinakotuyebakmaz/UniHelp.Api/wwwroot/lib/signalr.min.js",
+      "Identity": "/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/wwwroot/lib/signalr.min.js",
       "SourceId": "UniHelp.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/mislinakotuyebakmaz/UniHelp.Api/wwwroot/",
+      "ContentRoot": "/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/wwwroot/",
       "BasePath": "_content/UniHelp.Api",
       "RelativePath": "lib/signalr.min.js",
       "AssetKind": "All",

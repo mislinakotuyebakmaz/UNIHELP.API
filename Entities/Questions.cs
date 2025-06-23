@@ -18,6 +18,6 @@ public class Question
     public int UserId { get; set; }
 
     // Navigation Properties
-    public virtual User User { get; set; } = null!;
-    public virtual ICollection<Answer> Answers { get; set; } = new List<Answer>();  
+    public  User User { get; set; } = null!;
+    public  ICollection<Answer> Answers { get; set; } = new List<Answer>();  
 }

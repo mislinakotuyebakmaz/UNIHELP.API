@@ -17,10 +17,10 @@ try
 {
     // --- SERVİSLERİ EKLEME BÖLÜMÜ ---
     
+    // Veritabanı bağlantısı
     builder.Services.AddDbContext<DataContext>(options =>
     {
         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-        options.UseLazyLoadingProxies();
     });
 
     builder.Services.AddControllers();
@@ -28,6 +28,7 @@ try
     builder.Services.AddSwaggerGen();
     builder.Services.AddSignalR(); 
 
+    // Authentication (Kimlik Doğrulama) servisi
     builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         .AddJwtBearer(options =>
         {
@@ -41,24 +42,22 @@ try
             };
         });
 
-    // === GÜNCELLENMİŞ CORS POLİTİKASI ===
+    // CORS politikası
     builder.Services.AddCors(options =>
     {
         options.AddPolicy("AllowSpecificOrigin",
             policy =>
             {
-                // Test için daha esnek hale getiriyoruz: Herhangi bir kaynaktan gelen isteğe izin ver.
-                policy.AllowAnyOrigin() 
+                policy.WithOrigins("http://localhost:5058", "https://localhost:7123") 
                       .AllowAnyHeader()
                       .AllowAnyMethod()
                       .AllowCredentials();
             });
     });
-    // ===================================
 
     var app = builder.Build();
     
-    // --- MIDDLEWARE PİPELINE'INI YAPILANDIRMA ---
+    // --- MIDDLEWARE PİPELİNE'INI YAPILANDIRMA ---
 
     app.UseSerilogRequestLogging();
     app.UseMiddleware<ExceptionMiddleware>();
@@ -70,12 +69,9 @@ try
     }
     
     app.UseHttpsRedirection();
-    app.UseStaticFiles();
+    app.UseStaticFiles(); // wwwroot klasörünü sunmak için
     app.UseRouting();
-
-    // CORS middleware'ini çağırıyoruz
-    app.UseCors("AllowSpecificOrigin");
-    
+    app.UseCors("AllowSpecificOrigin"); // CORS'u aktif et
     app.UseAuthentication();
     app.UseAuthorization();
     

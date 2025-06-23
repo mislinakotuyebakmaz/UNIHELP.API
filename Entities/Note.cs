@@ -20,5 +20,5 @@ public class Note
     public int UserId { get; set; }
 
     // Navigation Property (İlişki)
-   public virtual User User { get; set; } = null!;
+   public  User User { get; set; } = null!;
 }

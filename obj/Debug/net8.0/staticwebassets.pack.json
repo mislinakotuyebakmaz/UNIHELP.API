@@ -1,11 +1,11 @@
 {
   "Files": [
     {
-      "Id": "/Users/mislinakotuyebakmaz/UniHelp.Api/wwwroot/index.html",
+      "Id": "/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/wwwroot/index.html",
       "PackagePath": "staticwebassets/index.html"
     },
     {
-      "Id": "/Users/mislinakotuyebakmaz/UniHelp.Api/wwwroot/lib/signalr.min.js",
+      "Id": "/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/wwwroot/lib/signalr.min.js",
       "PackagePath": "staticwebassets/lib/signalr.min.js"
     },
     {

@@ -17,7 +17,6 @@
         <label for="tokenInput">JWT Token:</label>
         <input type="text" id="tokenInput" size="100" placeholder="Login olduktan sonra aldığınız token'ı buraya yapıştırın..." />
         <button id="connectButton">Bağlan</button>
-        <button id="disconnectButton" disabled>Bağlantıyı Kes</button>
     </div>
     <hr />
 
@@ -26,67 +25,45 @@
 
     <!-- SignalR JavaScript kütüphanesini ekliyoruz -->
     <script src="/lib/signalr.min.js"></script>
+    
+    <!-- En basit ve en temiz JavaScript kodu -->
     <script>
-        const connection = new signalR.HubConnectionBuilder()
-            .withUrl("/notificationHub", {
-                accessTokenFactory: () => document.getElementById("tokenInput").value
-            })
-            .configureLogging(signalR.LogLevel.Information)
-            .build();
-
-        const connectBtn = document.getElementById("connectButton");
-        const disconnectBtn = document.getElementById("disconnectButton");
-        const notificationsList = document.getElementById("notificationsList");
-        
-        connectBtn.addEventListener("click", function (event) {
+        document.getElementById("connectButton").addEventListener("click", function () {
+            
             const token = document.getElementById("tokenInput").value;
             if (!token) {
                 alert("Lütfen bir JWT token girin!");
                 return;
             }
 
-            console.log("Bağlantı kuruluyor...");
-            connection.start().then(function () {
-                console.log("Bağlantı başarılı! ConnectionId:", connection.connectionId);
-                
-                // === YENİ EKLENEN LOGLAMA KODU ===
-                // Token'ı çözüp içindeki kullanıcı bilgilerini konsola yazdırıyoruz.
-                try {
-                    const payload = JSON.parse(atob(token.split('.')[1]));
-                    console.log("BAĞLANAN KULLANICI -> Adı:", payload.unique_name, " | ID:", payload.nameid);
-                } catch (e) {
-                    console.error("Token çözümlenirken hata oluştu:", e);
-                }
-                // ===================================
+            console.log("Bağlantı isteği gönderiliyor...");
 
-                connectBtn.disabled = true;
-                disconnectBtn.disabled = false;
-            }).catch(function (err) {
-                // === HATAYI DAHA DETAYLI LOGLA ===
-                console.error("### BAĞLANTI HATASI ###:", err);
-                // ================================
+            // Bağlantıyı oluştur
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/notificationHub", { 
+                    accessTokenFactory: () => token 
+                })
+                .configureLogging(signalR.LogLevel.Information)
+                .build();
+
+            // Sunucudan "ReceiveNotification" olayı geldiğinde ne yapılacağını tanımla
+            connection.on("ReceiveNotification", (message) => {
+                console.log("!!! BİLDİRİM GELDİ !!!:", message);
+                const li = document.createElement("li");
+                li.textContent = message;
+                document.getElementById("notificationsList").appendChild(li);
             });
-            event.preventDefault();
-        });
 
-        disconnectBtn.addEventListener("click", function (event) {
-            connection.stop().then(function () {
-                console.log("Bağlantı kesildi.");
-                connectBtn.disabled = false;
-                disconnectBtn.disabled = true;
-            }).catch(function (err) {
-                return console.error(err.toString());
-            });
-            event.preventDefault();
+            // Bağlantıyı başlat
+            connection.start()
+                .then(() => {
+                    console.log("Bağlantı başarıyla kuruldu! Artık bildirimler dinleniyor.");
+                    document.getElementById("connectButton").disabled = true;
+                })
+                .catch(err => {
+                    console.error("### BAĞLANTI HATASI ###:", err.toString());
+                });
         });
-
-        connection.on("ReceiveNotification", function (message) {
-            console.log("!!! BİLDİRİM ALINDI !!!:", message);
-            const li = document.createElement("li");
-            li.textContent = message;
-            notificationsList.insertBefore(li, notificationsList.firstChild);
-        });
-
     </script>
 </body>
 </html>

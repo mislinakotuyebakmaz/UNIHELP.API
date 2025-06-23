@@ -21,7 +21,7 @@ public class User
     public byte[] PasswordSalt { get; set; } = [];
 
     // Navigation Properties (İlişkiler)
-    public virtual ICollection<Note> Notes { get; set; } = new List<Note>();
-    public virtual ICollection<Question> Questions { get; set; } = new List<Question>();
-    public virtual ICollection<Answer> Answers { get; set; } = new List<Answer>();
+    public  ICollection<Note> Notes { get; set; } = new List<Note>();
+    public  ICollection<Question> Questions { get; set; } = new List<Question>();
+    public  ICollection<Answer> Answers { get; set; } = new List<Answer>();
 }
