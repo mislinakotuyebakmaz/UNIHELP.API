@@ -10,6 +10,9 @@ using UniHelp.Api.Hubs;
 
 namespace UniHelp.Api.Controllers;
 
+/// <summary>
+/// Belirli bir soruya ait cevapları yönetmek için kullanılan endpoint'leri içerir.
+/// </summary>
 [Authorize]
 [ApiController]
 [Route("api/v1/questions/{questionId}/[controller]")]
@@ -17,9 +20,14 @@ public class AnswersController : ControllerBase
 {
     private readonly DataContext _context;
     private readonly IHubContext<NotificationHub> _hubContext;
-    private readonly ILogger<AnswersController> _logger; // Logger servisi
+    private readonly ILogger<AnswersController> _logger;
 
-    // Constructor'a ILogger eklendi
+    /// <summary>
+    /// AnswersController için gerekli servisleri enjekte eder.
+    /// </summary>
+    /// <param name="context">Veritabanı işlemleri için DataContext.</param>
+    /// <param name="hubContext">Gerçek zamanlı bildirimler için SignalR HubContext.</param>
+    /// <param name="logger">Loglama işlemleri için Logger.</param>
     public AnswersController(
         DataContext context, 
         IHubContext<NotificationHub> hubContext, 
@@ -30,7 +38,22 @@ public class AnswersController : ControllerBase
         _logger = logger;
     }
 
+    /// <summary>
+    /// Belirtilen bir soruya yeni bir cevap ekler.
+    /// </summary>
+    /// <remarks>
+    /// Cevap eklendiğinde, sorunun sahibine gerçek zamanlı bir bildirim gönderir (eğer cevap yazan kişi sorunun sahibi değilse).
+    /// </remarks>
+    /// <param name="questionId">Cevap eklenecek sorunun ID'si.</param>
+    /// <param name="createAnswerDto">Yeni cevabın içeriğini taşıyan DTO.</param>
+    /// <returns>Oluşturulan cevabın bilgilerini içeren bir AnswerDto.</returns>
+    /// <response code="200">Cevap başarıyla oluşturulduğunda döner.</response>
+    /// <response code="401">Kullanıcı giriş yapmamışsa döner.</response>
+    /// <response code="404">Belirtilen ID'ye sahip soru bulunamazsa döner.</response>
     [HttpPost]
+    [ProducesResponseType(typeof(AnswerDto), 200)]
+    [ProducesResponseType(401)]
+    [ProducesResponseType(404)]
     public async Task<ActionResult<AnswerDto>> CreateAnswer(int questionId, CreateAnswerDto createAnswerDto)
     {
         // Cevap yazan kullanıcının bilgilerini alıyoruz

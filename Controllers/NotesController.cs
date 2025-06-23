@@ -5,30 +5,43 @@ using System.Security.Claims;
 using UniHelp.Api.Data;
 using UniHelp.Api.DTOs;
 using UniHelp.Api.Entities;
-using UniHelp.Api.Helpers; // QueryParameters için eklendi
+using UniHelp.Api.Helpers;
 
 namespace UniHelp.Api.Controllers;
 
+/// <summary>
+/// Ders notlarını oluşturma, okuma, güncelleme ve silme (CRUD) işlemlerini yönetir.
+/// </summary>
 [Authorize]
 [ApiController]
-[Route("api/v1/[controller]")] // Versiyonlama eklendi
+[Route("api/v1/[controller]")]
 public class NotesController : ControllerBase
 {
     private readonly DataContext _context;
 
+    /// <summary>
+    /// NotesController için gerekli servisleri enjekte eder.
+    /// </summary>
+    /// <param name="context">Veritabanı işlemleri için DataContext.</param>
     public NotesController(DataContext context)
     {
         _context = context;
     }
 
-    // GET /api/v1/notes - Sayfalama, filtreleme ve sıralama eklendi
+    /// <summary>
+    /// Sistemdeki notları sayfalama, filtreleme ve sıralama özellikleriyle listeler.
+    /// </summary>
+    /// <param name="queryParameters">Sayfa numarası, sayfa boyutu, arama terimi ve sıralama kriterlerini içeren sorgu parametreleri.</param>
+    /// <returns>NoteDto listesi.</returns>
+    /// <remarks>
+    /// Örnek istek: GET /api/v1/notes?pageNumber=1&pageSize=10&searchTerm=asp.net&sortBy=date_desc
+    /// </remarks>
     [HttpGet]
+    [ProducesResponseType(typeof(IEnumerable<NoteDto>), 200)]
     public async Task<ActionResult<IEnumerable<NoteDto>>> GetNotes([FromQuery] QueryParameters queryParameters)
     {
-        // Temel sorguyu başlatıyoruz
         IQueryable<Note> notesQuery = _context.Notes;
 
-        // Filtreleme (Arama terimine göre)
         if (!string.IsNullOrEmpty(queryParameters.SearchTerm))
         {
             notesQuery = notesQuery.Where(n => 
@@ -37,27 +50,20 @@ public class NotesController : ControllerBase
             );
         }
 
-        // Sıralama (SortBy parametresine göre)
-        if (!string.IsNullOrEmpty(queryParameters.SortBy))
+        if (!string.IsNullOrEmpty(queryParameters.SortBy) && queryParameters.SortBy.Equals("date_desc", StringComparison.OrdinalIgnoreCase))
         {
-            if (queryParameters.SortBy.Equals("date_desc", StringComparison.OrdinalIgnoreCase))
-            {
-                notesQuery = notesQuery.OrderByDescending(n => n.CreatedAt);
-            }
-            // Başka sıralama seçenekleri de eklenebilir
+            notesQuery = notesQuery.OrderByDescending(n => n.CreatedAt);
         }
         else
         {
-            // Varsayılan sıralama (en yeni en üstte)
             notesQuery = notesQuery.OrderByDescending(n => n.CreatedAt);
         }
 
-        // Sayfalama (Skip ve Take ile)
         var notes = await notesQuery
             .Skip((queryParameters.PageNumber - 1) * queryParameters.PageSize)
             .Take(queryParameters.PageSize)
-            .Include(n => n.User) // Yazar bilgisini dahil et
-            .Select(n => new NoteDto { // Sonucu DTO'ya çevir
+            .Include(n => n.User)
+            .Select(n => new NoteDto {
                 Id = n.Id,
                 Title = n.Title,
                 Content = n.Content,
@@ -69,8 +75,16 @@ public class NotesController : ControllerBase
         return Ok(notes);
     }
 
-    // GET /api/v1/notes/{id} - Tek bir notu getir (Bu metod aynı kalıyor)
+    /// <summary>
+    /// Belirtilen ID'ye sahip tek bir notu getirir.
+    /// </summary>
+    /// <param name="id">Getirilecek notun ID'si.</param>
+    /// <returns>İstenen notun detayları.</returns>
+    /// <response code="200">Not bulunduğunda döner.</response>
+    /// <response code="404">Belirtilen ID'ye sahip not bulunamazsa döner.</response>
     [HttpGet("{id}", Name = "GetNote")]
+    [ProducesResponseType(typeof(NoteDto), 200)]
+    [ProducesResponseType(404)]
     public async Task<ActionResult<NoteDto>> GetNote(int id)
     {
         var note = await _context.Notes
@@ -89,8 +103,16 @@ public class NotesController : ControllerBase
         return Ok(noteToReturn);
     }
 
-    // POST /api/v1/notes - Yeni bir not oluştur (Bu metod aynı kalıyor)
+    /// <summary>
+    /// Yeni bir not oluşturur.
+    /// </summary>
+    /// <param name="createNoteDto">Yeni notun başlık ve içerik bilgileri.</param>
+    /// <returns>Oluşturulan notun detayları.</returns>
+    /// <response code="201">Not başarıyla oluşturulduğunda döner.</response>
+    /// <response code="401">Kullanıcı giriş yapmamışsa döner.</response>
     [HttpPost]
+    [ProducesResponseType(typeof(NoteDto), 201)]
+    [ProducesResponseType(401)]
     public async Task<ActionResult<NoteDto>> CreateNote(CreateNoteDto createNoteDto)
     {
         var userIdString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -122,8 +144,19 @@ public class NotesController : ControllerBase
         return CreatedAtAction(nameof(GetNote), new { id = newNote.Id }, noteToReturn);
     }
 
-    // PUT /api/v1/notes/{id} - Bir notu güncelle (Bu metod aynı kalıyor)
+    /// <summary>
+    /// Mevcut bir notu günceller.
+    /// </summary>
+    /// <param name="id">Güncellenecek notun ID'si.</param>
+    /// <param name="updateNoteDto">Notun yeni başlık ve içerik bilgileri.</param>
+    /// <returns>İçerik yok (No Content) yanıtı.</returns>
+    /// <response code="204">Güncelleme başarılı olduğunda döner.</response>
+    /// <response code="403">Kullanıcı, notun sahibi değilse döner (Forbidden).</response>
+    /// <response code="404">Belirtilen ID'ye sahip not bulunamazsa döner.</response>
     [HttpPut("{id}")]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(403)]
+    [ProducesResponseType(404)]
     public async Task<IActionResult> UpdateNote(int id, UpdateNoteDto updateNoteDto)
     {
         var userIdString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -141,8 +174,18 @@ public class NotesController : ControllerBase
         return NoContent();
     }
 
-    // DELETE /api/v1/notes/{id} - Bir notu sil (Bu metod aynı kalıyor)
+    /// <summary>
+    /// Mevcut bir notu siler.
+    /// </summary>
+    /// <param name="id">Silinecek notun ID'si.</param>
+    /// <returns>İçerik yok (No Content) yanıtı.</returns>
+    /// <response code="204">Silme başarılı olduğunda döner.</response>
+    /// <response code="403">Kullanıcı, notun sahibi değilse döner (Forbidden).</response>
+    /// <response code="404">Belirtilen ID'ye sahip not bulunamazsa döner.</response>
     [HttpDelete("{id}")]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(403)]
+    [ProducesResponseType(404)]
     public async Task<IActionResult> DeleteNote(int id)
     {
         var userIdString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
