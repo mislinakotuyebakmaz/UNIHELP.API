@@ -415,3 +415,44 @@ FROM [Users] AS [u]
 WHERE LOWER([u].[Username]) = @__ToLower_0
 2025-06-24 04:52:21.542 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 3064.7639 ms
 2025-06-24 04:52:48.249 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 200 in 97.1412 ms
+2025-06-24 04:55:29.620 +03:00 [INF] Executed DbCommand (387ms) [Parameters=[@__ToLower_0_contains='?' (Size = 200), @__ToLower_0_contains_1='?' (Size = 4000), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Content], [t].[FileUrl], [t].[CreatedAt], [u].[Username] AS [AuthorUsername]
+FROM (
+    SELECT [n].[Id], [n].[Content], [n].[CreatedAt], [n].[FileUrl], [n].[Title], [n].[UserId]
+    FROM [Notes] AS [n]
+    WHERE LOWER([n].[Title]) LIKE @__ToLower_0_contains ESCAPE N'\' OR ([n].[Content] IS NOT NULL AND LOWER([n].[Content]) LIKE @__ToLower_0_contains_1 ESCAPE N'\')
+    ORDER BY [n].[CreatedAt] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+ORDER BY [t].[CreatedAt] DESC
+2025-06-24 04:55:29.639 +03:00 [INF] HTTP GET /api/v1/Notes responded 200 in 710.9932 ms
+2025-06-24 04:56:34.467 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2025-06-24 04:56:34.976 +03:00 [INF] Executed DbCommand (161ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 200), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Notes] ([Content], [CreatedAt], [FileUrl], [Title], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-06-24 04:56:35.105 +03:00 [INF] HTTP POST /api/v1/Notes responded 201 in 835.2261 ms
+2025-06-24 04:56:52.378 +03:00 [INF] Executed DbCommand (83ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [n].[Id], [n].[Content], [n].[CreatedAt], [n].[FileUrl], [n].[Title], [n].[UserId], [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Notes] AS [n]
+INNER JOIN [Users] AS [u] ON [n].[UserId] = [u].[Id]
+WHERE [n].[Id] = @__id_0
+2025-06-24 04:56:52.429 +03:00 [INF] HTTP GET /api/v1/Notes/3 responded 404 in 168.9269 ms
+2025-06-24 04:57:09.621 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [n].[Id], [n].[Content], [n].[CreatedAt], [n].[FileUrl], [n].[Title], [n].[UserId], [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Notes] AS [n]
+INNER JOIN [Users] AS [u] ON [n].[UserId] = [u].[Id]
+WHERE [n].[Id] = @__id_0
+2025-06-24 04:57:09.625 +03:00 [INF] HTTP GET /api/v1/Notes/0 responded 404 in 67.2591 ms
+2025-06-24 04:58:20.567 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [n].[Id], [n].[Content], [n].[CreatedAt], [n].[FileUrl], [n].[Title], [n].[UserId], [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Notes] AS [n]
+INNER JOIN [Users] AS [u] ON [n].[UserId] = [u].[Id]
+WHERE [n].[Id] = @__id_0
+2025-06-24 04:58:20.588 +03:00 [INF] HTTP GET /api/v1/Notes/1 responded 200 in 34.4427 ms
