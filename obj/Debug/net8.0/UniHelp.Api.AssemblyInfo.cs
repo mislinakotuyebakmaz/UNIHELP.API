@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UniHelp.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a421254c05c9babc89afb4616a6453df44411cc7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+110189418ec2612f50626baa98867b5e4e0a3aa6")]
 [assembly: System.Reflection.AssemblyProductAttribute("UniHelp.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UniHelp.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

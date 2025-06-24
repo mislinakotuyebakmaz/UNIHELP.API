@@ -1,4 +1,5 @@
 namespace UniHelp.Api.DTOs;
+using System.ComponentModel.DataAnnotations;
 
 /// <summary>
 /// Bir soruyu, yazar bilgisi ve ona ait tüm cevaplarla birlikte istemciye göstermek için kullanılır.
@@ -13,11 +14,13 @@ public class QuestionDto
     /// <summary>
     /// Sorunun başlığı.
     /// </summary>
+    [Required]
     public string Title { get; set; } = string.Empty;
 
     /// <summary>
     /// Sorunun detaylı açıklaması / metni.
     /// </summary>
+    [Required]
     public string Body { get; set; } = string.Empty;
 
     /// <summary>

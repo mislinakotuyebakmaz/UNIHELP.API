@@ -447,3 +447,28 @@ VALUES (@p0, @p1, @p2, @p3);
 2025-06-23 16:18:56.411 +03:00 [INF] --> Gönderilecek Mesaj: yeni_kullanici kullanıcısı, 'Bu benim son ve kesin test sorum' başlıklı sorunuza bir cevap yazdı.
 2025-06-23 16:18:56.414 +03:00 [INF] --> Bildirim başarıyla gönderildi.
 2025-06-23 16:18:56.445 +03:00 [INF] HTTP POST /api/questions/1/answers responded 200 in 891.5486 ms
+2025-06-23 22:08:44.009 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-23 22:08:45.474 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-23 22:08:46.214 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-23 22:08:46.215 +03:00 [INF] Hosting environment: Development
+2025-06-23 22:08:46.215 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-23 22:08:47.817 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 862.8276 ms
+2025-06-23 22:08:48.962 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 951.7004 ms
+2025-06-23 22:11:51.453 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-23 22:11:54.747 +03:00 [INF] Executed DbCommand (148ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-23 22:11:54.988 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 3555.9450 ms
+2025-06-23 22:16:06.933 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-23 22:16:06.952 +03:00 [INF] HTTP POST /api/auth/login responded 200 in 132.7657 ms
+2025-06-23 22:43:30.963 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-23 22:43:31.430 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-23 22:43:31.453 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-23 22:43:31.466 +03:00 [INF] Hosting environment: Development
+2025-06-23 22:43:31.468 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-23 22:43:32.162 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 320.9079 ms
+2025-06-23 22:43:32.726 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 391.9880 ms

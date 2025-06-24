@@ -1,0 +1,417 @@
+2025-06-24 00:00:23.128 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-24 00:00:23.417 +03:00 [INF] HTTP GET /index.html responded 200 in 338.0783 ms
+2025-06-24 00:00:23.423 +03:00 [INF] HTTP GET /lib/signalr.min.js responded 304 in 0.6909 ms
+2025-06-24 00:02:04.064 +03:00 [INF] Executed DbCommand (291ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 00:02:04.272 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 3468.3945 ms
+2025-06-24 00:02:17.993 +03:00 [INF] HTTP POST /notificationHub/negotiate responded 200 in 117.4601 ms
+2025-06-24 00:02:49.892 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 2.3515 ms
+2025-06-24 00:02:49.916 +03:00 [INF] HTTP GET /lib/signalr.min.js.map responded 404 in 2.4384 ms
+2025-06-24 00:03:09.281 +03:00 [INF] HTTP GET /index.html responded 304 in 2.0267 ms
+2025-06-24 00:03:09.494 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.4955 ms
+2025-06-24 00:03:09.527 +03:00 [INF] HTTP GET /lib/signalr.min.js.map responded 404 in 2.2691 ms
+2025-06-24 00:03:09.555 +03:00 [INF] HTTP GET /notificationHub responded 101 in 51544.1748 ms
+2025-06-24 00:03:47.908 +03:00 [INF] HTTP POST /notificationHub/negotiate responded 200 in 43.5787 ms
+2025-06-24 00:09:23.146 +03:00 [INF] HTTP POST /notificationHub/negotiate responded 200 in 16.2428 ms
+2025-06-24 00:09:23.374 +03:00 [INF] HTTP GET /notificationHub responded 101 in 335437.5426 ms
+2025-06-24 00:29:37.574 +03:00 [INF] HTTP POST /api/auth/login responded 404 in 5.3543 ms
+2025-06-24 00:33:04.484 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 9.7469 ms
+2025-06-24 00:33:05.103 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 86.9267 ms
+2025-06-24 00:33:54.354 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 00:33:54.596 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 00:33:54.608 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 00:33:54.609 +03:00 [INF] Hosting environment: Development
+2025-06-24 00:33:54.609 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 00:33:55.524 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 404.0178 ms
+2025-06-24 00:33:56.206 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 297.6696 ms
+2025-06-24 00:34:00.975 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-24 00:34:01.433 +03:00 [INF] HTTP POST /notificationHub/negotiate responded 200 in 466.7169 ms
+2025-06-24 00:34:01.519 +03:00 [INF] SignalR bağlantı denemesi - ConnectionId: uB2a12LDj_KkRjuy6uAC7Q
+2025-06-24 00:34:01.524 +03:00 [INF] Context.User null mu? false
+2025-06-24 00:34:01.527 +03:00 [INF] User Claims: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier=1, http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name=mislina, nbf=1750712524, exp=1750798924, iat=1750712524
+2025-06-24 00:34:01.545 +03:00 [INF] ✅ Kullanıcı başarıyla bağlandı - Username: mislina, UserId: 1, Group: user_1, ConnectionId: uB2a12LDj_KkRjuy6uAC7Q
+2025-06-24 00:34:19.099 +03:00 [INF] Executed DbCommand (76ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 00:34:19.330 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 3208.4021 ms
+2025-06-24 00:36:23.551 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 00:36:23.804 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 00:36:23.814 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 00:36:23.816 +03:00 [INF] Hosting environment: Development
+2025-06-24 00:36:23.817 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 00:36:24.721 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 317.0852 ms
+2025-06-24 00:36:25.428 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 378.2815 ms
+2025-06-24 00:36:25.969 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-24 00:36:26.252 +03:00 [INF] HTTP POST /notificationHub/negotiate responded 200 in 287.1734 ms
+2025-06-24 00:36:26.310 +03:00 [INF] SignalR bağlantı denemesi - ConnectionId: MyAiVozM0sDmzMZ9WOehDQ
+2025-06-24 00:36:26.313 +03:00 [INF] Context.User null mu? false
+2025-06-24 00:36:26.317 +03:00 [INF] User Claims: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier=1, http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name=mislina, nbf=1750712524, exp=1750798924, iat=1750712524
+2025-06-24 00:36:26.319 +03:00 [INF] ✅ Kullanıcı başarıyla bağlandı - Username: mislina, UserId: 1, Group: user_1, ConnectionId: MyAiVozM0sDmzMZ9WOehDQ
+2025-06-24 00:43:12.619 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 00:43:12.961 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 00:43:12.973 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 00:43:12.974 +03:00 [INF] Hosting environment: Development
+2025-06-24 00:43:12.974 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 00:43:14.096 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 489.7734 ms
+2025-06-24 00:43:14.933 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 439.0604 ms
+2025-06-24 00:43:40.978 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-24 00:43:41.177 +03:00 [INF] HTTP POST /notificationHub/negotiate responded 200 in 207.8939 ms
+2025-06-24 00:43:41.269 +03:00 [INF] SignalR bağlantı denemesi - ConnectionId: lYnQdVi9ZfRSspXVch3hKQ
+2025-06-24 00:43:41.271 +03:00 [INF] Context.User null mu? false
+2025-06-24 00:43:41.274 +03:00 [INF] User Claims: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier=1, http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name=mislina, nbf=1750712524, exp=1750798924, iat=1750712524
+2025-06-24 00:43:41.275 +03:00 [INF] ✅ Kullanıcı başarıyla bağlandı - Username: mislina, UserId: 1, Group: user_1, ConnectionId: lYnQdVi9ZfRSspXVch3hKQ
+2025-06-24 00:43:53.163 +03:00 [INF] Executed DbCommand (93ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 00:43:53.345 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 2808.2871 ms
+2025-06-24 00:44:39.630 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 24.2043 ms
+2025-06-24 00:47:35.606 +03:00 [INF] HTTP GET /api/v1/Notes responded 401 in 34.5296 ms
+2025-06-24 00:49:05.438 +03:00 [INF] HTTP GET /swagger responded 301 in 14.0746 ms
+2025-06-24 00:49:05.474 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 7.1273 ms
+2025-06-24 00:49:06.011 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 298.1572 ms
+2025-06-24 00:50:12.998 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 00:50:13.009 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 139.4724 ms
+2025-06-24 00:51:03.464 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 3.5962 ms
+2025-06-24 00:52:28.133 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 1.2482 ms
+2025-06-24 00:52:29.355 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 0.3201 ms
+2025-06-24 00:52:30.718 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 0.7469 ms
+2025-06-24 01:35:29.892 +03:00 [INF] ❌ Kullanıcı bağlantısı kesildi - Username: mislina, UserId: 1, Group: user_1, ConnectionId: lYnQdVi9ZfRSspXVch3hKQ
+2025-06-24 01:35:29.902 +03:00 [INF] HTTP POST /notificationHub/negotiate responded 200 in 269.6623 ms
+2025-06-24 01:35:29.904 +03:00 [ERR] SignalR bağlantısı hata ile kesildi - ConnectionId: lYnQdVi9ZfRSspXVch3hKQ
+System.OperationCanceledException: Client hasn't sent a message/ping within the configured ClientTimeoutInterval.
+2025-06-24 01:35:30.086 +03:00 [INF] SignalR bağlantı denemesi - ConnectionId: WXzkQpbYKi6M_LjWE1P5qA
+2025-06-24 01:35:30.086 +03:00 [INF] Context.User null mu? false
+2025-06-24 01:35:30.087 +03:00 [INF] User Claims: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier=1, http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name=mislina, nbf=1750712524, exp=1750798924, iat=1750712524
+2025-06-24 01:35:30.089 +03:00 [INF] ✅ Kullanıcı başarıyla bağlandı - Username: mislina, UserId: 1, Group: user_1, ConnectionId: WXzkQpbYKi6M_LjWE1P5qA
+2025-06-24 01:35:30.545 +03:00 [INF] HTTP GET /notificationHub responded 101 in 3109323.5311 ms
+2025-06-24 01:36:16.307 +03:00 [INF] ❌ Kullanıcı bağlantısı kesildi - Username: mislina, UserId: 1, Group: user_1, ConnectionId: WXzkQpbYKi6M_LjWE1P5qA
+2025-06-24 01:36:16.309 +03:00 [ERR] SignalR bağlantısı hata ile kesildi - ConnectionId: WXzkQpbYKi6M_LjWE1P5qA
+System.OperationCanceledException: Client hasn't sent a message/ping within the configured ClientTimeoutInterval.
+2025-06-24 01:36:16.313 +03:00 [INF] HTTP POST /notificationHub/negotiate responded 200 in 11.1268 ms
+2025-06-24 01:36:16.328 +03:00 [INF] HTTP GET /notificationHub responded 101 in 46381.5150 ms
+2025-06-24 01:36:16.361 +03:00 [INF] SignalR bağlantı denemesi - ConnectionId: AWuq7C4V2gx26GvyPZZriw
+2025-06-24 01:36:16.361 +03:00 [INF] Context.User null mu? false
+2025-06-24 01:36:16.361 +03:00 [INF] User Claims: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier=1, http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name=mislina, nbf=1750712524, exp=1750798924, iat=1750712524
+2025-06-24 01:36:16.362 +03:00 [INF] ✅ Kullanıcı başarıyla bağlandı - Username: mislina, UserId: 1, Group: user_1, ConnectionId: AWuq7C4V2gx26GvyPZZriw
+2025-06-24 01:37:18.286 +03:00 [INF] ❌ Kullanıcı bağlantısı kesildi - Username: mislina, UserId: 1, Group: user_1, ConnectionId: AWuq7C4V2gx26GvyPZZriw
+2025-06-24 01:37:18.286 +03:00 [ERR] SignalR bağlantısı hata ile kesildi - ConnectionId: AWuq7C4V2gx26GvyPZZriw
+System.OperationCanceledException: Client hasn't sent a message/ping within the configured ClientTimeoutInterval.
+2025-06-24 01:37:18.316 +03:00 [INF] HTTP GET /notificationHub responded 101 in 61969.9213 ms
+2025-06-24 01:37:18.322 +03:00 [INF] HTTP POST /notificationHub/negotiate responded 200 in 11.5844 ms
+2025-06-24 01:37:18.354 +03:00 [INF] SignalR bağlantı denemesi - ConnectionId: 9gX-A0dGPoMYkcq2XUAtQw
+2025-06-24 01:37:18.355 +03:00 [INF] Context.User null mu? false
+2025-06-24 01:37:18.356 +03:00 [INF] User Claims: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier=1, http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name=mislina, nbf=1750712524, exp=1750798924, iat=1750712524
+2025-06-24 01:37:18.356 +03:00 [INF] ✅ Kullanıcı başarıyla bağlandı - Username: mislina, UserId: 1, Group: user_1, ConnectionId: 9gX-A0dGPoMYkcq2XUAtQw
+2025-06-24 01:38:21.287 +03:00 [INF] ❌ Kullanıcı bağlantısı kesildi - Username: mislina, UserId: 1, Group: user_1, ConnectionId: 9gX-A0dGPoMYkcq2XUAtQw
+2025-06-24 01:38:21.288 +03:00 [ERR] SignalR bağlantısı hata ile kesildi - ConnectionId: 9gX-A0dGPoMYkcq2XUAtQw
+System.OperationCanceledException: Client hasn't sent a message/ping within the configured ClientTimeoutInterval.
+2025-06-24 01:38:21.292 +03:00 [INF] HTTP GET /notificationHub responded 101 in 62952.3609 ms
+2025-06-24 01:38:21.299 +03:00 [INF] HTTP POST /notificationHub/negotiate responded 200 in 6.8315 ms
+2025-06-24 01:38:21.322 +03:00 [INF] SignalR bağlantı denemesi - ConnectionId: oQW-PwvE8tUaklS68lglZA
+2025-06-24 01:38:21.323 +03:00 [INF] Context.User null mu? false
+2025-06-24 01:38:21.323 +03:00 [INF] User Claims: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier=1, http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name=mislina, nbf=1750712524, exp=1750798924, iat=1750712524
+2025-06-24 01:38:21.325 +03:00 [INF] ✅ Kullanıcı başarıyla bağlandı - Username: mislina, UserId: 1, Group: user_1, ConnectionId: oQW-PwvE8tUaklS68lglZA
+2025-06-24 01:41:55.833 +03:00 [INF] HTTP POST /notificationHub/negotiate responded 200 in 1097.9741 ms
+2025-06-24 01:41:56.332 +03:00 [INF] SignalR bağlantı denemesi - ConnectionId: cLXWxcrP1rtRHyQJfR5mTw
+2025-06-24 01:41:56.333 +03:00 [INF] Context.User null mu? false
+2025-06-24 01:41:56.336 +03:00 [INF] User Claims: http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier=1, http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name=mislina, nbf=1750712524, exp=1750798924, iat=1750712524
+2025-06-24 01:41:56.345 +03:00 [INF] ✅ Kullanıcı başarıyla bağlandı - Username: mislina, UserId: 1, Group: user_1, ConnectionId: cLXWxcrP1rtRHyQJfR5mTw
+2025-06-24 01:41:56.719 +03:00 [INF] ❌ Kullanıcı bağlantısı kesildi - Username: mislina, UserId: 1, Group: user_1, ConnectionId: oQW-PwvE8tUaklS68lglZA
+2025-06-24 01:41:56.726 +03:00 [INF] HTTP GET /notificationHub responded 101 in 212981.6350 ms
+2025-06-24 01:58:53.835 +03:00 [FTL] Uygulama başlatılırken kritik bir hata oluştu.
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/Program.cs:line 126
+2025-06-24 02:12:11.212 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 02:12:12.262 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 02:12:12.317 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 02:12:12.318 +03:00 [INF] Hosting environment: Development
+2025-06-24 02:12:12.318 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 02:12:15.910 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 448.5813 ms
+2025-06-24 02:12:17.970 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 1176.4336 ms
+2025-06-24 02:12:21.736 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 3.2886 ms
+2025-06-24 02:12:21.935 +03:00 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 148.7839 ms
+2025-06-24 02:12:21.947 +03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 149.0166 ms
+2025-06-24 02:12:21.991 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 203.4312 ms
+2025-06-24 02:12:22.373 +03:00 [INF] HTTP GET /swagger/favicon-32x32.png responded 200 in 0.4293 ms
+2025-06-24 02:12:22.403 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 106.6985 ms
+2025-06-24 02:13:03.883 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-24 02:13:12.444 +03:00 [INF] Executed DbCommand (100ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 02:13:13.524 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 9695.8331 ms
+2025-06-24 02:14:09.101 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 50.8739 ms
+2025-06-24 02:55:12.662 +03:00 [INF] HTTP GET /api/v1/Notes responded 401 in 127.3768 ms
+2025-06-24 03:12:07.103 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 81.6478 ms
+2025-06-24 03:12:08.360 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 529.7113 ms
+58: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-06-24 03:12:29.897 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 03:12:30.084 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 03:12:30.096 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 03:12:30.097 +03:00 [INF] Hosting environment: Development
+2025-06-24 03:12:30.099 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 03:12:30.829 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-24 03:12:30.937 +03:00 [INF] HTTP GET /swagger/index.html responded 404 in 165.8017 ms
+2025-06-24 03:12:34.691 +03:00 [INF] HTTP GET /swagger/index.html responded 404 in 12.6418 ms
+2025-06-24 03:12:35.702 +03:00 [INF] HTTP GET /swagger/index.html responded 404 in 10.1272 ms
+2025-06-24 03:13:46.030 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 03:13:46.513 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 03:13:46.535 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 03:13:46.537 +03:00 [INF] Hosting environment: Development
+2025-06-24 03:13:46.537 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 03:13:47.351 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-24 03:13:47.511 +03:00 [INF] HTTP GET /swagger/index.html responded 404 in 327.7330 ms
+2025-06-24 03:18:05.054 +03:00 [INF] HTTP GET / responded 301 in 7.8132 ms
+2025-06-24 03:18:05.259 +03:00 [INF] HTTP GET /index.html responded 200 in 192.9626 ms
+2025-06-24 03:18:05.427 +03:00 [INF] HTTP GET /swagger-ui-standalone-preset.js responded 200 in 104.3105 ms
+2025-06-24 03:18:05.428 +03:00 [INF] HTTP GET /swagger-ui.css responded 200 in 104.4201 ms
+2025-06-24 03:18:05.447 +03:00 [INF] HTTP GET /swagger-ui-bundle.js responded 200 in 126.8252 ms
+2025-06-24 03:18:05.867 +03:00 [INF] HTTP GET /favicon-32x32.png responded 200 in 1.1127 ms
+2025-06-24 03:18:06.199 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 417.4196 ms
+2025-06-24 03:19:55.886 +03:00 [INF] Executed DbCommand (160ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 03:19:56.205 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 3024.1864 ms
+2025-06-24 03:20:27.951 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 22.7268 ms
+2025-06-24 03:21:38.013 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 03:21:38.232 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 03:21:38.242 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 03:21:38.243 +03:00 [INF] Hosting environment: Development
+2025-06-24 03:21:38.243 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 03:21:38.750 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-24 03:21:38.847 +03:00 [INF] HTTP GET /swagger/index.html responded 404 in 197.2707 ms
+2025-06-24 03:24:17.210 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 03:24:17.537 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 03:24:17.557 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 03:24:17.558 +03:00 [INF] Hosting environment: Development
+2025-06-24 03:24:17.558 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 03:24:19.144 +03:00 [INF] HTTP GET /index.html responded 200 in 326.0968 ms
+2025-06-24 03:24:20.677 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 750.3223 ms
+2025-06-24 03:24:50.192 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-24 03:24:53.054 +03:00 [INF] Executed DbCommand (108ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 03:24:53.322 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 3137.2046 ms
+2025-06-24 03:25:26.723 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 27.4889 ms
+2025-06-24 03:27:38.954 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 13.1448 ms
+2025-06-24 03:27:43.439 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 10.4865 ms
+2025-06-24 03:29:37.937 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 0.6006 ms
+2025-06-24 03:29:58.589 +03:00 [INF] HTTP GET /index.html responded 200 in 6.5600 ms
+2025-06-24 03:29:59.043 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 110.3447 ms
+2025-06-24 03:30:18.922 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 03:30:18.933 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 89.6645 ms
+2025-06-24 03:31:07.211 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 0.4019 ms
+2025-06-24 03:34:06.157 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 03:34:06.577 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 03:34:06.602 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 03:34:06.604 +03:00 [INF] Hosting environment: Development
+2025-06-24 03:34:06.605 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 03:34:08.716 +03:00 [INF] HTTP GET /index.html responded 200 in 471.0738 ms
+2025-06-24 03:34:09.815 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 817.1689 ms
+2025-06-24 03:34:38.406 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-24 03:34:44.735 +03:00 [INF] Executed DbCommand (140ms) [Parameters=[@__ToLower_0='?' (Size = 50), @__ToLower_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE LOWER([u].[Username]) = @__ToLower_0 OR LOWER([u].[Email]) = @__ToLower_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-24 03:34:45.449 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 8000) (DbType = Binary), @p2='?' (Size = 8000) (DbType = Binary), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [PasswordHash], [PasswordSalt], [Username])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-24 03:34:45.561 +03:00 [INF] HTTP POST /api/v1/Auth/register responded 200 in 7167.1521 ms
+2025-06-24 03:35:06.305 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 03:35:06.424 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 257.0723 ms
+2025-06-24 03:35:08.707 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 03:35:08.713 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 224.5837 ms
+2025-06-24 03:36:11.032 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 19.0514 ms
+2025-06-24 03:43:43.239 +03:00 [INF] HTTP GET /index.html responded 200 in 4.5527 ms
+2025-06-24 03:43:43.804 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 74.5581 ms
+2025-06-24 03:44:18.121 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 03:44:18.128 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 90.4047 ms
+2025-06-24 03:44:59.086 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 4.6083 ms
+2025-06-24 03:51:16.215 +03:00 [INF] HTTP GET /index.html responded 200 in 3.9312 ms
+2025-06-24 03:51:16.535 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 58.5193 ms
+2025-06-24 03:51:52.242 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 03:51:52.248 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 87.1199 ms
+2025-06-24 03:52:29.828 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 4.4988 ms
+2025-06-24 03:53:28.163 +03:00 [INF] HTTP GET /favicon.ico responded 404 in 5.3837 ms
+2025-06-24 03:56:37.738 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 6.7726 ms
+2025-06-24 03:57:07.520 +03:00 [INF] HTTP GET /index.html responded 200 in 11.7763 ms
+2025-06-24 03:57:07.689 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.5701 ms
+2025-06-24 03:57:08.597 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 61.0998 ms
+2025-06-24 03:57:42.160 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 03:57:42.186 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 170.7151 ms
+2025-06-24 03:58:06.273 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 0.5635 ms
+2025-06-24 03:58:33.400 +03:00 [INF] HTTP GET /index.html responded 200 in 1.5556 ms
+2025-06-24 03:58:33.524 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.4888 ms
+2025-06-24 03:58:34.809 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 91.2520 ms
+2025-06-24 03:59:06.799 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 0.6113 ms
+2025-06-24 04:03:43.370 +03:00 [INF] HTTP GET /index.html responded 200 in 5.9452 ms
+2025-06-24 04:03:43.478 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 5.4565 ms
+2025-06-24 04:03:44.625 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 134.3979 ms
+2025-06-24 04:03:58.514 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 3.4755 ms
+2025-06-24 04:04:21.965 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 04:04:21.977 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 170.0120 ms
+2025-06-24 04:04:57.722 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 0.3323 ms
+2025-06-24 04:07:06.605 +03:00 [INF] HTTP GET /index.html responded 200 in 2.0525 ms
+2025-06-24 04:07:06.722 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.5769 ms
+2025-06-24 04:07:06.874 +03:00 [INF] HTTP GET /swagger-ui.css responded 200 in 151.1952 ms
+2025-06-24 04:07:06.994 +03:00 [INF] HTTP GET /swagger-ui-standalone-preset.js responded 200 in 250.4186 ms
+2025-06-24 04:07:07.003 +03:00 [INF] HTTP GET /swagger-ui-bundle.js responded 200 in 280.9020 ms
+2025-06-24 04:07:07.486 +03:00 [INF] HTTP GET /favicon-32x32.png responded 200 in 0.7650 ms
+2025-06-24 04:07:07.693 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 208.0668 ms
+2025-06-24 04:15:26.359 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 04:15:26.616 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 04:15:26.630 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 04:15:26.633 +03:00 [INF] Hosting environment: Development
+2025-06-24 04:15:26.635 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 04:15:27.476 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-24 04:15:27.659 +03:00 [INF] HTTP GET /index.html responded 200 in 392.4751 ms
+2025-06-24 04:15:27.824 +03:00 [INF] HTTP GET /favicon.ico responded 404 in 108.7845 ms
+2025-06-24 04:16:34.446 +03:00 [INF] HTTP GET /index.html responded 304 in 14.3122 ms
+2025-06-24 04:17:04.241 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 04:17:04.852 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 04:17:04.863 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 04:17:04.864 +03:00 [INF] Hosting environment: Development
+2025-06-24 04:17:04.866 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 04:17:28.969 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 167.2232 ms
+2025-06-24 04:17:29.788 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 350.8768 ms
+2025-06-24 04:22:19.287 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 04:22:19.610 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 04:22:19.621 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 04:22:19.622 +03:00 [INF] Hosting environment: Development
+2025-06-24 04:22:19.625 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 04:25:35.737 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 04:25:35.948 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 04:25:35.960 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 04:25:35.962 +03:00 [INF] Hosting environment: Development
+2025-06-24 04:25:35.963 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 04:27:02.168 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 04:27:02.353 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 04:27:02.363 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 04:27:02.366 +03:00 [INF] Hosting environment: Development
+2025-06-24 04:27:02.366 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 04:27:03.321 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 376.5315 ms
+2025-06-24 04:27:03.883 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 259.0976 ms
+2025-06-24 04:27:30.587 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-24 04:27:33.547 +03:00 [INF] Executed DbCommand (76ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 04:27:33.848 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 3271.3451 ms
+2025-06-24 04:27:58.756 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 33.7409 ms
+2025-06-24 04:28:55.880 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 20.0441 ms
+2025-06-24 04:30:00.941 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 11.0934 ms
+2025-06-24 04:30:01.057 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 6.3896 ms
+2025-06-24 04:30:01.987 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 94.4548 ms
+2025-06-24 04:31:44.671 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 04:31:44.703 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 136.4836 ms
+2025-06-24 04:33:42.978 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 10.8030 ms
+2025-06-24 04:35:19.113 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 200 in 237.2077 ms
+2025-06-24 04:38:46.432 +03:00 [INF] HTTP GET /swagger/ responded 301 in 1.0768 ms
+2025-06-24 04:38:46.444 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 2.8660 ms
+2025-06-24 04:38:46.776 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.8500 ms
+2025-06-24 04:38:47.750 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 64.8242 ms
+2025-06-24 04:39:47.451 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 0.9321 ms
+2025-06-24 04:40:05.613 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 04:40:05.622 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 210.8536 ms
+2025-06-24 04:41:00.048 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 0.9988 ms
+2025-06-24 04:44:36.034 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 04:44:36.329 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 04:44:36.351 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 04:44:36.354 +03:00 [INF] Hosting environment: Development
+2025-06-24 04:44:36.355 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 04:44:37.220 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 224.3381 ms
+2025-06-24 04:44:37.801 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 329.1720 ms
+2025-06-24 04:44:59.583 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-24 04:45:02.302 +03:00 [INF] Executed DbCommand (107ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 04:45:02.628 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 3050.6222 ms
+2025-06-24 04:45:22.913 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 401 in 22.5438 ms
+2025-06-24 04:46:06.385 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 21.9167 ms
+2025-06-24 04:51:52.544 +03:00 [INF] Uygulama başlatılıyor...
+2025-06-24 04:51:52.856 +03:00 [INF] Now listening on: http://localhost:5058
+2025-06-24 04:51:52.871 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-24 04:51:52.872 +03:00 [INF] Hosting environment: Development
+2025-06-24 04:51:52.875 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API
+2025-06-24 04:51:53.390 +03:00 [INF] HTTP GET /swagger/index.html responded 200 in 222.3859 ms
+2025-06-24 04:51:54.119 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 538.7960 ms
+2025-06-24 04:52:18.484 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-24 04:52:21.296 +03:00 [INF] Executed DbCommand (108ms) [Parameters=[@__ToLower_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[PasswordSalt], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2025-06-24 04:52:21.542 +03:00 [INF] HTTP POST /api/v1/Auth/login responded 200 in 3064.7639 ms
+2025-06-24 04:52:48.249 +03:00 [INF] HTTP GET /api/v1/Auth/test-auth responded 200 in 97.1412 ms

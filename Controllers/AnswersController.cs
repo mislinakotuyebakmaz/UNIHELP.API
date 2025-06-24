@@ -120,4 +120,51 @@ public class AnswersController : ControllerBase
         };
         return Ok(answerToReturn);
     }
+
+    /// <summary>
+    /// SignalR bildirimlerini test etmek için kullanılır.
+    /// </summary>
+    /// <returns>Test sonucu.</returns>
+    [HttpPost("test-notification")]
+    [ProducesResponseType(typeof(object), 200)]
+    [ProducesResponseType(401)]
+    public async Task<IActionResult> TestNotification()
+    {
+        var userIdString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (userIdString == null) return Unauthorized();
+        
+        var username = User.FindFirst(ClaimTypes.Name)?.Value;
+        var groupName = $"user_{userIdString}";
+        var message = $"Test bildirimi - Kullanıcı: {username}, Saat: {DateTime.Now:HH:mm:ss}";
+
+        _logger.LogInformation("🔔 Test bildirimi gönderiliyor...");
+        _logger.LogInformation("👤 Hedef Kullanıcı: {Username} (ID: {UserId})", username, userIdString);
+        _logger.LogInformation("🎯 Hedef Grup: {GroupName}", groupName);
+        _logger.LogInformation("💬 Mesaj: {Message}", message);
+
+        try
+        {
+            await _hubContext.Clients.Group(groupName).SendAsync("ReceiveNotification", message);
+            _logger.LogInformation("✅ Test bildirimi başarıyla gönderildi!");
+            
+            return Ok(new { 
+                success = true, 
+                message = "Test bildirimi gönderildi",
+                targetUser = username,
+                targetGroup = groupName,
+                sentMessage = message,
+                timestamp = DateTime.Now
+            });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "❌ Test bildirimi gönderilirken hata oluştu!");
+            return Ok(new { 
+                success = false, 
+                message = "Test bildirimi gönderilemedi",
+                error = ex.Message,
+                targetGroup = groupName
+            });
+        }
+    }
 }

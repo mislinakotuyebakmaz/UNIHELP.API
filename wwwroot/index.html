@@ -1,69 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr" data-theme="light">
 <head>
-    <title>UniHelp Bildirimleri</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UniHelp - Gerçek Zamanlı Bildirimler</title>
+    <!-- Tek satırda şıklık: Pico.css framework'ünü ekliyoruz -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        #notificationsList { list-style-type: none; padding: 0; }
-        #notificationsList li { background-color: #f0f0f0; margin-bottom: 10px; padding: 15px; border-left: 5px solid #007bff; }
+        /* Sadece birkaç küçük düzenleme */
+        main { padding: 2rem; }
+        .notification-card { margin-bottom: 1rem; }
+        .notification-card footer { font-size: 0.8rem; color: var(--pico-muted-color); text-align: right; }
+        #status-indicator { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background-color: #d32f2f; margin-left: 10px; vertical-align: middle; }
+        #status-indicator.connected { background-color: #388e3c; }
     </style>
 </head>
 <body>
 
-    <h1>Gerçek Zamanlı Bildirimler</h1>
-    <hr />
-
-    <div>
-        <label for="tokenInput">JWT Token:</label>
-        <input type="text" id="tokenInput" size="100" placeholder="Login olduktan sonra aldığınız token'ı buraya yapıştırın..." />
-        <button id="connectButton">Bağlan</button>
-    </div>
-    <hr />
-
-    <h3>Gelen Bildirimler:</h3>
-    <ul id="notificationsList"></ul>
-
-    <!-- SignalR JavaScript kütüphanesini ekliyoruz -->
-    <script src="/lib/signalr.min.js"></script>
+<main class="container">
+    <hgroup>
+        <h1>UniHelp Bildirim Paneli</h1>
+        <h2>Sorularınıza gelen cevapları anında görün</h2>
+    </hgroup>
     
-    <!-- En basit ve en temiz JavaScript kodu -->
-    <script>
-        document.getElementById("connectButton").addEventListener("click", function () {
-            
-            const token = document.getElementById("tokenInput").value;
-            if (!token) {
-                alert("Lütfen bir JWT token girin!");
-                return;
-            }
+    <article>
+        <header>
+            <strong>Bağlantı Kurulumu</strong>
+            <span id="status-indicator" title="Bağlı Değil"></span>
+        </header>
+        <label for="tokenInput">
+            JWT Token
+            <input type="text" id="tokenInput" placeholder="Login sonrası aldığınız token'ı buraya yapıştırın" />
+        </label>
+        <div class="grid">
+            <button id="connectButton">Bağlan</button>
+            <button id="disconnectButton" class="secondary" disabled>Bağlantıyı Kes</button>
+        </div>
+    </article>
 
-            console.log("Bağlantı isteği gönderiliyor...");
+    <section>
+        <h3>Gelen Bildirimler</h3>
+        <div id="notificationsList">
+            <!-- Bildirimler buraya <article> olarak eklenecek -->
+        </div>
+    </section>
 
-            // Bağlantıyı oluştur
-            const connection = new signalR.HubConnectionBuilder()
-                .withUrl("/notificationHub", { 
-                    accessTokenFactory: () => token 
-                })
-                .configureLogging(signalR.LogLevel.Information)
-                .build();
+</main>
 
-            // Sunucudan "ReceiveNotification" olayı geldiğinde ne yapılacağını tanımla
-            connection.on("ReceiveNotification", (message) => {
-                console.log("!!! BİLDİRİM GELDİ !!!:", message);
-                const li = document.createElement("li");
-                li.textContent = message;
-                document.getElementById("notificationsList").appendChild(li);
-            });
+<script src="/lib/signalr.min.js"></script>
+<script>
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("/notificationHub", { accessTokenFactory: () => document.getElementById("tokenInput").value })
+        .withAutomaticReconnect()
+        .build();
 
-            // Bağlantıyı başlat
-            connection.start()
-                .then(() => {
-                    console.log("Bağlantı başarıyla kuruldu! Artık bildirimler dinleniyor.");
-                    document.getElementById("connectButton").disabled = true;
-                })
-                .catch(err => {
-                    console.error("### BAĞLANTI HATASI ###:", err.toString());
-                });
-        });
-    </script>
+    const connectBtn = document.getElementById("connectButton");
+    const disconnectBtn = document.getElementById("disconnectButton");
+    const notificationsList = document.getElementById("notificationsList");
+    const statusIndicator = document.getElementById("status-indicator");
+
+    // Bildirim geldiğinde, listeye eklemek yerine şık bir kart oluşturuyoruz.
+    connection.on("ReceiveNotification", function (message) {
+        console.log("!!! BİLDİRİM ALINDI !!!:", message);
+        
+        const article = document.createElement("article");
+        article.className = "notification-card";
+        article.innerHTML = `<p>${message}</p><footer>Az önce - ${new Date().toLocaleTimeString()}</footer>`;
+        
+        notificationsList.insertBefore(article, notificationsList.firstChild);
+    });
+
+    function updateUI(isConnected) {
+        connectBtn.disabled = isConnected;
+        disconnectBtn.disabled = !isConnected;
+        statusIndicator.classList.toggle("connected", isConnected);
+        statusIndicator.title = isConnected ? "Bağlı" : "Bağlı Değil";
+    }
+
+    async function startConnection() {
+        try {
+            await connection.start();
+            console.log("Bağlantı başarılı!");
+            updateUI(true);
+        } catch (err) {
+            console.error("Bağlantı hatası:", err);
+            updateUI(false);
+            setTimeout(startConnection, 5000);
+        }
+    }
+
+    connection.onclose(() => {
+        console.log("Bağlantı koptu.");
+        updateUI(false);
+    });
+
+    connectBtn.addEventListener("click", () => {
+        const token = document.getElementById("tokenInput").value;
+        if (!token) { alert("Lütfen bir token girin."); return; }
+        startConnection();
+    });
+
+    disconnectBtn.addEventListener("click", () => {
+        connection.stop();
+    });
+</script>
 </body>
 </html>

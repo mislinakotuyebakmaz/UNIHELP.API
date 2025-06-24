@@ -159,6 +159,8 @@
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Azure.Identity.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Humanizer.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.AspNetCore.Connections.Abstractions.dll
+/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.AspNetCore.SignalR.Common.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.CodeAnalysis.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.CodeAnalysis.CSharp.dll
@@ -171,6 +173,8 @@
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.SqlServer.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll
+/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.Extensions.Features.dll
+/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.Identity.Client.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.Identity.Client.Extensions.Msal.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
@@ -183,6 +187,7 @@
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.SqlServer.Server.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.Win32.SystemEvents.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Mono.TextTemplating.dll
+/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Scrutor.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Serilog.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Serilog.AspNetCore.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
@@ -192,6 +197,8 @@
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Serilog.Sinks.Console.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Serilog.Sinks.File.dll
+/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.Filters.dll
+/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.Filters.Abstractions.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -295,7 +302,3 @@
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/obj/Debug/net8.0/UniHelp.Api.pdb
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/obj/Debug/net8.0/UniHelp.Api.genruntimeconfig.cache
 /Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/obj/Debug/net8.0/ref/UniHelp.Api.dll
-/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.AspNetCore.Connections.Abstractions.dll
-/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.AspNetCore.SignalR.Common.dll
-/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.Extensions.Features.dll
-/Users/mislinakotuyebakmaz/Documents/GitHub/UNIHELP.API/bin/Debug/net8.0/Microsoft.Extensions.Options.dll

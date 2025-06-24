@@ -12,8 +12,7 @@ public class CreateQuestionDto
     /// </summary>
     /// <example>ASP.NET Core'da SignalR nasıl kullanılır?</example>
     [Required]
-    [MinLength(10)]
-    [MaxLength(250)]
+    [StringLength(100, MinimumLength = 5)]
     public string Title { get; set; } = string.Empty;
 
     /// <summary>
@@ -21,5 +20,6 @@ public class CreateQuestionDto
     /// </summary>
     /// <example>Bir kullanıcı başka bir kullanıcıya bildirim göndermek istediğinde, hangi adımları izlemeliyim?</example>
     [Required]
+    [StringLength(1000, MinimumLength = 10)]
     public string Body { get; set; } = string.Empty;
 }

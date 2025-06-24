@@ -37,6 +37,7 @@ public class NotesController : ControllerBase
     /// Örnek istek: GET /api/v1/notes?pageNumber=1&pageSize=10&searchTerm=asp.net&sortBy=date_desc
     /// </remarks>
     [HttpGet]
+    [AllowAnonymous]
     [ProducesResponseType(typeof(IEnumerable<NoteDto>), 200)]
     public async Task<ActionResult<IEnumerable<NoteDto>>> GetNotes([FromQuery] QueryParameters queryParameters)
     {
@@ -83,6 +84,7 @@ public class NotesController : ControllerBase
     /// <response code="200">Not bulunduğunda döner.</response>
     /// <response code="404">Belirtilen ID'ye sahip not bulunamazsa döner.</response>
     [HttpGet("{id}", Name = "GetNote")]
+    [AllowAnonymous]
     [ProducesResponseType(typeof(NoteDto), 200)]
     [ProducesResponseType(404)]
     public async Task<ActionResult<NoteDto>> GetNote(int id)
